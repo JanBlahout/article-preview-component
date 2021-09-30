@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+}
+
+/* # Front-end Style Guide
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+### Body Copy
+
+- Font size: 13px
+
+### Headings
+
+- Family: [Manrope](https://fonts.google.com/specimen/Manrope)
+- Weights: 500, 700 */
+
+:root {
+  --dark-gray-blue: hsl(217, 19%, 35%);
+  --dark-blue: hsl(214, 17%, 51%);
+  --gray-blue: hsl(212, 23%, 69%);
+  --light-gray: hsl(210, 46%, 95%);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+body {
+  background-color: var(--light-gray);
+}
+
+.container {
+  display: flex;
+
+  max-width: 80rem;
+  /* width: clamp(53rem, 80rem, 80%); */
+  margin: 10rem auto;
+  background-color: #fff;
+  border-radius: 15px;
+  /* overflow: hidden; */
+  box-shadow: 0 15px 25px rgb(0, 0, 0, 0.1);
+}
+
+.img-drawers {
+  width: 30.5rem;
+  object-fit: cover;
+  object-position: left;
+  border-radius: 15px 0 0 15px;
+}
+
+.text-container {
+  padding: 4rem;
+}
+
+h1 {
+  font-weight: 700;
+  color: var(--dark-gray-blue);
+  font-size: 2.2rem;
+  line-height: 1.3;
+}
+
+.text {
+  margin-top: 2rem;
+  line-height: 1.6;
+  font-size: 1.4rem;
+  color: var(--dark-blue);
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.testemonial {
+  display: flex;
+  align-items: center;
+}
+
+.profile-picture {
+  height: 48px;
+  border-radius: 50%;
+}
+
+.name {
+  margin-left: 2rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--dark-gray-blue);
+}
+
+.date {
+  font-weight: 500;
+  color: var(--gray-blue);
+}
+
+.link {
+  margin-left: auto;
+  background-color: var(--light-gray);
+  padding: 1rem;
+  border-radius: 50%;
+}
+
+/* ######################
+POP UP 
+###################### */
+
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 25rem;
+  background-color: var(--dark-gray-blue);
+  color: #fff;
+  /* text-align: center; */
+  border-radius: 6px;
+  padding: 16px 32px;
+  position: absolute;
+  z-index: 1;
+  bottom: 160%;
+  left: 50%;
+  margin-left: -125px;
+  font-size: 1.4rem;
+  font-family: 'Manrope', sans-serif;
+  letter-spacing: 3px;
+  color: var(--gray-blue);
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: var(--dark-gray-blue) transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+  z-index: 1;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 44em) {
+  .container {
+    flex-direction: column;
+    max-width: 36rem;
+    min-width: 35rem;
+    margin: 10rem auto;
+    overflow: hidden;
+  }
+
+  .img-drawers {
+    width: 36rem;
+    height: 20rem;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px 15px 0 0;
+  }
+
+  .text-container {
+    padding: 4rem 4rem 2rem 4rem;
+  }
+
+  /* html {
+    font-size: 50%;
+  } */
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .testemonial {
+    padding-top: 2rem;
+  }
+
+  .popup .popuptext::after {
+    display: none;
+  }
+
+  .popup .popuptext {
+    width: 37rem;
+    border-radius: 6px;
+    padding: 24px 100px 24px 32px;
+    position: absolute;
+    z-index: 1;
+    bottom: -71%;
+    left: -466%;
+    margin-left: -125px;
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+  }
+
+  .icon-arrow {
+    z-index: 10;
+  }
+
+  .popuptext {
+    z-index: 5;
+  }
+}
